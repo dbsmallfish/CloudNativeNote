@@ -1,3 +1,5 @@
+## Docker 安装
+
 >官网文档：[https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
 对ubuntu系统
 
@@ -44,16 +46,14 @@ $ sudo apt-get install \
 
  # 官网源：curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 ```
- 
+
 然后，我们需要向 `sources.list` 中添加 Docker 软件源 
 
-```plain
+```shell
 # 阿里云源
 $ echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-
 
 # 官方源
 $  echo \
@@ -61,7 +61,7 @@ $  echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 最后安装docker
-```plain
+```shell
  $ sudo apt-get update
  $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
@@ -71,18 +71,18 @@ $  echo \
 
 1) 显示repo中可用的docker版本
 
-```plain
+```shell
  $ apt-cache madison docker-ce
 ```
 2) 进行安装
-```plain
+```shell
  sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
 ```
 ### 验证Docker是否正确安装
 
 通过运行 hello-world 镜像验证 Docker Engine 是否已正确安装。
 
-```plain
+```shell
  docker run hello-world
 ```
- 
+
