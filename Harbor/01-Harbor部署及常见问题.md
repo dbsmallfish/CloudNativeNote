@@ -28,7 +28,8 @@ $ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 >Harbor的安装包分为在线版和离线版，离线版包含安装所需的所有镜像
 >Harbor无法登录问题： [https://blog.csdn.net/weixin_43952432/article/details/100577560](https://blog.csdn.net/weixin_43952432/article/details/100577560) 
-####  下载harbor离线安装包
+>
+>####  下载harbor离线安装包
 
 ```shell
 $ wget https://github.com/goharbor/harbor/releases/download/v2.1.0/harbor-offline-installer-v2.1.0.tgz

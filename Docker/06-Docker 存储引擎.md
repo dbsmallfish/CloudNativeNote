@@ -3,6 +3,8 @@
 >参考：[https://www.cnblogs.com/Gmiaomiao/p/13174618.html](https://www.cnblogs.com/Gmiaomiao/p/13174618.html)
 >
 >官网文档：https://docs.docker.com/storage/storagedriver/select-storage-driver/
+>
+>overlay ：[https://www.cnblogs.com/lhanghang/p/13556629.html](https://www.cnblogs.com/lhanghang/p/13556629.html)
 
 ​	目前docker的默认存储引擎为overlay2，不同的存储引擎需要相应的文件系统支持，如需要磁盘分区的时候传递d-type稳健分层功能，即需要传递内核参数并开启格式化磁盘的时候指定的功能
 
@@ -34,7 +36,7 @@ CMD python /app/app.py
 
 ![image-20211228122106318](../images/image-20211228122106318.png)
 
-Docker 的镜像（image）是静态的，所以当镜像构建完成后，所有的层都是只读的，并会赋予一个唯一的 ID。而容器（container）是动态的，当容器启动后，Docker 会给这个容器创建一个可读写“层”，位于所有镜像“层”的最上面。我们对容器的所有操作也就是在这个“层”里完成，当我们执行 `docker commit` 将容器生成镜像的时候，就是把这个“层”给拍了个快照，添加了一个新的只读层。
+​	Docker 的镜像（image）是静态的，所以当镜像构建完成后，所有的层都是只读的，并会赋予一个唯一的 ID。而容器（container）是动态的，当容器启动后，Docker 会给这个容器创建一个可读写“层”，位于所有镜像“层”的最上面。我们对容器的所有操作也就是在这个“层”里完成，当我们执行 `docker commit` 将容器生成镜像的时候，就是把这个“层”给拍了个快照，添加了一个新的只读层。
 
 **文件的创建是在读写层增加文件，那修改和删除呢？**
 
